@@ -1,4 +1,4 @@
-package com.amit.spark.transform;
+package com.amit.spark.rdd.transform;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.spark.SparkConf;
