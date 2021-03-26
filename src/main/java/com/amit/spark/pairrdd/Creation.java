@@ -1,5 +1,6 @@
 package com.amit.spark.pairrdd;
 
+import com.amit.spark.Util;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
@@ -17,11 +18,11 @@ public class Creation {
         JavaSparkContext ctx = new JavaSparkContext(conf);
         JavaRDD<String> rdd = ctx.parallelize(Arrays.asList("Amit 39", "Divya 35"));
         JavaPairRDD<String, Integer> pairRdd = rdd.mapToPair(getPair());
-        pairRdd.coalesce(1).saveAsTextFile("/Users/amarora/workspace/java-poc/spark-my-poc/output/pair-rdd-creation.txt");
+        pairRdd.coalesce(1).saveAsTextFile(Util.OUTPUT_PATH + "pair-rdd-creation.txt");
 
         List<Tuple2<String, Integer>> tuple2List = Arrays.asList(new Tuple2<>("Amit", 49), new Tuple2<>("Divya", 45));
         pairRdd = ctx.parallelizePairs(tuple2List);
-        pairRdd.coalesce(1).saveAsTextFile("/Users/amarora/workspace/java-poc/spark-my-poc/output/pair-rdd-creation-from-tuple.txt");
+        pairRdd.coalesce(1).saveAsTextFile(Util.OUTPUT_PATH + "pair-rdd-creation-from-tuple.txt");
     }
 
     public static PairFunction<String, String, Integer> getPair(){

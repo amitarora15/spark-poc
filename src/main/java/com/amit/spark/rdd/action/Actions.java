@@ -1,5 +1,6 @@
 package com.amit.spark.rdd.action;
 
+import com.amit.spark.Util;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
@@ -30,7 +31,7 @@ public class Actions {
         long count = integerJavaRDD.count();
         System.out.println("Count is :" + count);
 
-        JavaRDD<String> primeNumberRDD = ctx.textFile("/Users/amarora/workspace/java-poc/spark-my-poc/input/prime_nums.text");
+        JavaRDD<String> primeNumberRDD = ctx.textFile(Util.INPUT_PATH + "prime_nums.text");
         JavaRDD<String> lines = primeNumberRDD.flatMap(line -> Arrays.asList(line.split("\\s+")).iterator());
         Integer sum = lines.filter(number -> !number.isEmpty()).map(number -> Integer.parseInt(number)).reduce((x,y) -> x+y);
         System.out.println("Sum of prime numbers : "+ sum);
