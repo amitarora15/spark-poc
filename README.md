@@ -15,4 +15,7 @@ Check for input and output path in Util.java interface
     * Creation from Tuple list or from normal RDD by PairMap function  
     * Filter and Map on Pair RDD (mapValues, mapToPair)
     * Reduce By Key & Sort By Key
-    * Join operations     
+    * Join operations
+* Common Operations
+    * Accumulator
+    * Broadcast         
