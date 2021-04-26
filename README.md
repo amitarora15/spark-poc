@@ -3,7 +3,8 @@ RDD is used for loading the data in distributed way on which Transformations and
 
 Check for input and output path in Util.java interface
 
-* RDD
+## RDD
+* Common Operations
     * Transformation
         * Filter - filtering of data set
         * Map - Getting transformed output from input set
@@ -18,4 +19,12 @@ Check for input and output path in Util.java interface
     * Join operations
 * Common Operations
     * Accumulator
-    * Broadcast         
+    * Broadcast    
+
+    
+## Spark SQL
+* DataFrame 
+    * GroupBy
+    * Select
+    * Filter
+    * Order by   
