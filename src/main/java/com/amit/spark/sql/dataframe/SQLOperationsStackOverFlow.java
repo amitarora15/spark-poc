@@ -8,7 +8,7 @@ import org.apache.spark.sql.Row;
 import static org.apache.spark.sql.functions.*;
 import org.apache.spark.sql.SparkSession;
 
-public class SQLOperations {
+public class SQLOperationsStackOverFlow {
 
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setMaster("local[*]").setAppName("Spark-SQL");
